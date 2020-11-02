@@ -15,12 +15,14 @@ def saludo(request): #primera vista
     #nombre = "Cromwell"
     #apellido = "San"
 
+    temasDelCurso = ["Plantillas", "Modelos", "Formularios", "Vistas", "Despliegues"]
+
     ahora = datetime.datetime.now()
 
     doc_externo = open("/Users/Cromwell/Desktop/Django_Tuto1/Tuto1/Tuto1/Plantillas/index.html")
     plt = Template(doc_externo.read())
     doc_externo.close
-    ctx = Context({"nombre_persona":p1.nombre, "apellido_persona":p1.apellido, "momento_actual":ahora})
+    ctx = Context({"nombre_persona":p1.nombre, "apellido_persona":p1.apellido, "momento_actual":ahora, "temas":temasDelCurso})
     documento = plt.render(ctx)
     return HttpResponse(documento)
 
