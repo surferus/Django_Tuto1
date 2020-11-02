@@ -1,7 +1,23 @@
 <html>
     <body>
         <h1> Que loco estas!!</h1>
-        <p>El nombre del alumno es: {{nombre_persona}} {{apellido_persona}}</p>
+        <p>El nombre del alumno es: {{nombre_persona.upper}} {{apellido_persona.lower}}</p>
         <p>Plantillas a dia: {{momento_actual.day}} / {{momento_actual.month}} / {{momento_actual.year}}</p>
+        <p><strong>Temas del curso:</strong></p>
+        <p>
+            <ul>
+            {% if temas%}
+                {% for i in temas %}
+                
+                <li>{{i}}</li>
+
+                {% endfor %}
+            {% else %}
+            <p>No Hay Elementos que Mostrar</p>
+            {% endif %}
+            </ul>
+        </p>
+        <p><strong>{{temas.1}}</strong></p>
+        <p>{{temas.2}}</p>
     </body>
 </html>
